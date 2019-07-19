@@ -7,6 +7,12 @@ pragma solidity ^0.5.10;
  * to the system stored on IPFS. All information in the system, whether on-chain or on
  * IPFS, is impossible to change without a contract event logging the change, and all 
  * versions of all data can be permanently referenced on IPFS.
+ * A Supply Chain is defined in this system as a Directed Acyclic Graph of supply steps 
+ * that follow the production of something back to it's conception. A supply step always 
+ * references a single item in the system, and may extend one or more previous supply steps, 
+ * or precedents. A new step may only be added as a first step, or the last step of an existing 
+ * supply chain. Approval must be granted to create a new supply step, which extends a supply 
+ * step not owned directly.
  */
 contract SupplyChain {
 
